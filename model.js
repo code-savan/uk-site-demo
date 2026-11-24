@@ -1,4 +1,4 @@
-export const demo={name:'Hearth Heating',area:'Greater Manchester',phone:'0161 496 0123',offer:'',logo:'',colour:'#ad4d2e',whatsapp:'',address:''};
+export const demo={name:'Hearth Heating',area:'Greater Manchester',phone:'0161 496 0123',offer:'',logo:'',colour:'#ad4d2e',whatsapp:'',address:'',email:'',registration:'',review:'',reviewAuthor:'',reviewUrl:'',teamImage:''};
 export function clean(raw){
  const data={};
  for(const key of Object.keys(demo)) data[key]=String(raw[key]??'').trim();
@@ -8,6 +8,10 @@ export function clean(raw){
  if(data.offer.length>160)throw Error('Keep the offer under 161 characters.');
  if(data.whatsapp && !/^\+?[0-9 ()-]{10,20}$/.test(data.whatsapp))throw Error('Enter a WhatsApp number with country code, e.g. +44.');
  if(data.address.length>200)throw Error('Keep the address under 201 characters.');
+ if(data.email&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email))throw Error('Enter a valid business email.');
+ if(data.registration&&!/^[0-9]{1,10}$/.test(data.registration))throw Error('Use the verified registration number only.');
+ if(data.review.length>500||data.reviewAuthor.length>90)throw Error('Review text or author is too long.');
+ for(const key of ['reviewUrl','teamImage'])if(data[key]&&(!/^https:\/\//i.test(data[key])||data[key].length>500))throw Error('Use an HTTPS URL for '+key);
  data.colour=data.colour||demo.colour;
  if(!/^#[a-f0-9]{6}$/i.test(data.colour))throw Error('Use a six-digit hex colour.');
  return data;

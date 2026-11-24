@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap">
   <link rel="stylesheet" href="/style.css">
-  <link rel="stylesheet" href="/premium.css">
+  <link rel="stylesheet" href="/premium.css"><link rel="stylesheet" href="/experience.css"><script type="module" src="/experience.js"></script>
   <script type="module" src="/preview.js"></script>
 </head>
 <body class="premium">
@@ -18,24 +18,24 @@
   <header class="sitehead">
     <a href="#home" class="wordmark"><span class="mark" id="mark">∿</span><img id="logo" hidden alt=""><span data-name></span></a>
     <nav><a href="#services">Our services</a><a href="#approach">Our approach</a><a href="#location">Your area</a></nav>
-    <button class="btn" data-start>Find my heating solution ↗</button>
+    <button class="btn" data-quote>Build my quote ↗</button>
   </header>
   <main id="home">
     <section class="editorial-hero">
       <div class="hero-copy">
         <p class="eyebrow">BOILER INSTALLATION · REPLACEMENT · CONTROLS</p>
-        <h1>Good heating.<br>Better <em>living.</em></h1>
-        <p class="hero-description" id="pitch">A boiler that suits your home. Heating you feel comfortable with. Start your next chapter with <span data-name></span>.</p>
-        <div class="hero-actions"><button class="btn" data-start>Help me choose ↗</button><a href="#services" class="textlink">Explore our services ↓</a></div>
+        <h1>A better boiler.<br>A warmer<br><em>home.</em></h1>
+        <p class="hero-description" id="pitch">Boiler installation and replacement in <span data-area></span>. Tell us about your home and take the first step towards the right heating setup.</p>
+        <div class="hero-actions"><button class="btn" data-quote>Find my new boiler ↗</button><a href="#services" class="textlink">Explore our services ↓</a></div>
         <div class="hero-location"><span class="location-icon">⌖</span><div><small>LOOKING AFTER HOMES ACROSS</small><strong data-area></strong></div></div>
       </div>
       <div class="hero-visual">
         <img src="/assets/hero-premium.jpg" alt="Sunlit British living room with green panelling and a tall column radiator" fetchpriority="high">
         <div class="image-caption"><span>Made for the way you live.</span><span>HEATING AT HOME</span></div>
-        <button class="floating-question" data-start><span class="question-icon">↗</span><span>What does your home need?<small>Find your starting point</small></span></button>
+        <button class="floating-question" data-quote><span class="question-icon">↗</span><span>What does your home need?<small>Find your starting point</small></span></button>
       </div>
     </section>
-    <div class="benefit-strip"><span>Designed around your home</span><span>Clear scope before you book</span><span>Local service in <b data-area></b></span></div>
+    <div class="credential" id="credential" hidden></div><div class="benefit-strip"><span>Designed around your home</span><span>Clear scope before you book</span><span>Local service in <b data-area></b></span></div>
     <section class="wrap service-section" id="services">
       <div class="section-intro"><div><p class="eyebrow">THE RIGHT STARTING POINT</p><h2>Every home is different.<br>So is its heating.</h2></div><p>Replacing an old boiler or planning something new? Explore the service that fits your home.</p></div>
       <div class="service-tabs" role="tablist" aria-label="Heating services">
@@ -45,10 +45,18 @@
       </div>
       <div class="service-feature" role="tabpanel" id="service-panel" aria-labelledby="tab-install">
         <div class="service-image"><img id="service-image" src="/assets/boiler-premium.jpg" alt="White combi boiler with neat copper pipework" loading="lazy"><span id="service-tag">A NEW START</span></div>
-        <div class="service-copy"><p class="eyebrow" id="service-kicker">FOR NEW SPACES & CHANGING NEEDS</p><h3 id="service-title">The right boiler.<br>For your kind of home.</h3><p id="service-description">Bedrooms, bathrooms, water use and available space all shape the right setup. Start with your home and build the plan around it.</p><ul id="service-points"><li>Discuss combi, system and regular boiler options</li><li>Review the installation position and pipework</li><li>Agree the specification before booking</li></ul><button class="btn" id="service-cta">Plan my installation ↗</button></div>
+        <div class="service-copy"><p class="eyebrow" id="service-kicker">FOR NEW SPACES & CHANGING NEEDS</p><h3 id="service-title">The right boiler.<br>For your kind of home.</h3><p id="service-description">Bedrooms, bathrooms, water use and available space all shape the right setup. Start with your home and build the plan around it.</p><ul id="service-points"><li>Discuss combi, system and regular boiler options</li><li>Review the installation position and pipework</li><li>Agree the specification before booking</li></ul><div class="service-actions"><button class="btn" id="service-cta">Plan my installation ↗</button><a class="textlink" id="service-details" href="/service.html?service=installation">Explore the full service ↗</a></div></div>
       </div>
     </section>
-    <section class="approach wrap" id="approach">
+    <section class="boiler-guide wrap" id="boiler-guide">
+<div class="section-intro"><div><p class="eyebrow">KNOW YOUR OPTIONS</p><h2>A little guidance.<br>A clearer decision.</h2></div><p>Explore common system types before discussing the right specification for your home.</p></div>
+<div class="boiler-options">
+<article><span class="system-symbol">C</span><p class="eyebrow">COMBI BOILER</p><h3>Keep things compact.</h3><p>Heating and hot water from one unit. A practical starting point where space is limited.</p><dl><dt>Storage</dt><dd>Usually no hot water cylinder</dd><dt>Discuss</dt><dd>Water pressure and simultaneous demand</dd></dl><button data-type="Combi">Ask about a combi ↗</button></article>
+<article><span class="system-symbol">S</span><p class="eyebrow">SYSTEM BOILER</p><h3>Room for more demand.</h3><p>Works with a hot water cylinder. Explore it when several bathrooms need hot water.</p><dl><dt>Storage</dt><dd>Hot water cylinder required</dd><dt>Discuss</dt><dd>Cylinder space and household usage</dd></dl><button data-type="System">Ask about a system boiler ↗</button></article>
+<article><span class="system-symbol">R</span><p class="eyebrow">REGULAR BOILER</p><h3>Work with your home.</h3><p>An option for some existing traditional systems, assessed alongside the current installation.</p><dl><dt>Storage</dt><dd>Typically a cylinder and water tanks</dd><dt>Discuss</dt><dd>Existing system and conversion options</dd></dl><button data-type="Regular">Discuss my current setup ↗</button></article>
+</div></section>
+<section class="review-section wrap" id="review-section" hidden><p class="eyebrow">FROM A CUSTOMER</p><blockquote id="review-text"></blockquote><div><strong id="review-author"></strong><a id="review-source" target="_blank" rel="noopener">Read the original review ↗</a></div></section>
+<section class="quote-banner wrap"><div><p class="eyebrow">YOUR HOME. YOUR REQUIREMENTS.</p><h2>Start with the details.<br>We'll take it from there.</h2><p>A few short questions prepare your enquiry for the installer.</p></div><button class="btn" data-quote>Build my quote request ↗</button></section><section class="approach wrap" id="approach">
       <div class="approach-photo"><img src="/assets/team-premium.jpg" alt="Heating engineer and homeowner reviewing a tablet in a kitchen" loading="lazy"><p>Clear conversations.<br>Comfortable decisions.</p></div>
       <div class="approach-copy"><p class="eyebrow">A MORE PERSONAL APPROACH</p><h2>Let's get the<br>details right.</h2><p>A good installation starts long before fitting day. Tell us what works, what doesn't, and what you'd like to change.</p><div class="detail-row"><span>01</span><div><h3>Your home comes first</h3><p>Space, hot water demand and the way you live.</p></div></div><div class="detail-row"><span>02</span><div><h3>A clear plan</h3><p>Talk through the scope, specification and price.</p></div></div><div class="detail-row"><span>03</span><div><h3>Ready for fitting day</h3><p>Agree access, timing and what to expect at home.</p></div></div></div>
     </section>
@@ -59,10 +67,10 @@
       <details><summary>How soon can I book?</summary><p>Ask the team about current availability. Your preferred timing is included in the chat enquiry.</p></details>
       <details><summary>Do you cover my postcode?</summary><p>The service area is <span data-area></span>. Use the assistant to send your postcode for confirmation.</p></details>
     </div></section>
-    <section class="closing"><p class="eyebrow">YOUR NEXT STEP</p><h2>Let's make home<br>feel like <em>home.</em></h2><button class="btn" data-start>Tell us what you need ↗</button></section>
+    <section class="closing"><p class="eyebrow">YOUR NEXT STEP</p><h2>Let's make home<br>feel like <em>home.</em></h2><button class="btn" data-quote>Build my quote request ↗</button></section>
   </main>
   <footer><div><a href="#home" class="wordmark"><span class="mark">∿</span><span data-name></span></a><p>Heating for homes across <span data-area></span>.</p></div><div><a data-call data-phone></a><p>Concept website · Illustrative imagery</p></div></footer>
-  <div class="chat-nudge" id="chat-nudge"><button class="nudge-close" aria-label="Dismiss chat suggestion">×</button><strong>A new boiler on your mind?</strong><p>Let's find your starting point.</p><button data-start>Help me choose ↗</button></div>
+  <div class="mobile-quote"><button class="btn" data-quote>Start my quote ↗</button></div><div class="chat-nudge" id="chat-nudge"><button class="nudge-close" aria-label="Dismiss chat suggestion">×</button><strong>A new boiler on your mind?</strong><p>Let's find your starting point.</p><button data-start>Help me choose ↗</button></div>
   <button class="chat-launch" id="chat-launch" aria-expanded="false" aria-controls="chat-panel"><span>◌</span> Let's talk heating</button>
   <section class="chat-panel" id="chat-panel" role="dialog" aria-label="Heating assistant" hidden>
     <header><div><strong data-name></strong><span>Heating assistant · Guided questions</span></div><button id="chat-close" aria-label="Close assistant">×</button></header>
@@ -70,5 +78,5 @@
     <div class="chat-controls" id="chat-controls"></div>
     <div class="chat-foot"><button id="chat-restart">Start again</button><span>Details stay here until you send.</span></div>
   </section>
-</body>
+<dialog id="quote-wizard" aria-label="Build your boiler quote"><button id="wizard-close" class="wizard-close" aria-label="Close quote builder">×</button><div id="wizard-content"></div></dialog></body>
 </html>
