@@ -201,3 +201,8 @@ document.querySelector('[data-location]').onclick=()=>openChat('Check my area');
 document.querySelector('#service-cta').onclick=()=>openChat(selectedService);
 document.querySelector('.nudge-close').onclick=()=>document.querySelector('#chat-nudge').hidden=true;
 panel.onkeydown=event=>{if(event.key==='Escape')closeChat()};
+
+// Loading another preview in the same tab must refresh its business details.
+window.addEventListener('hashchange',()=>{
+  if(location.hash.startsWith('#p=')&&location.href!==previewLink)location.reload();
+});
